@@ -1,0 +1,17 @@
+# Modified from https://dotnetcore.gaprogman.com/2017/06/08/continuous-integration-and-appveyor/
+version: '1.0.{build}'
+image: Visual Studio 2017
+init:
+  # Good practise, because Windows line endings are different from Unix/Linux ones
+  - cmd: git config --global core.autocrlf true
+before_build:
+  # Display .NET Core version
+  - cmd: dotnet --version
+  # Display minimal restore text
+  - cmd: dotnet restore ./SmallCommitsWorkshop/SmallCommitsWorkshop.csproj --verbosity m
+  # restore packages for our unit tests
+  - cmd: dotnet restore ./SmallCommitsWorkshopTests/SmallCommitsWorkshopTests.csproj --verbosity m
+test_script:
+  # run the unit tests (requires changing into the test directory)
+  - cmd: dotnet test ./SmallCommitsWorkshopTests/SmallCommitsWorkshopTests.csproj --no-build --verbosity d
+deploy: off

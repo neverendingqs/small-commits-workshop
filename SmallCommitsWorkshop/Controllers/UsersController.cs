@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SmallCommitsWorkshop.Models;
 
 namespace SmallCommitsWorkshop.Controllers {
@@ -21,9 +23,9 @@ namespace SmallCommitsWorkshop.Controllers {
 		}
 
 		[HttpGet]
-		public ActionResult<IDictionary<long, string>> GetAll() =>
-			m_usersContext
-				.Users
-				.ToDictionary( user => user.Id, user => user.UserName );
+		public async Task<ActionResult<IDictionary<long, string>>> GetAll() {
+			IEnumerable<User> users = await m_usersContext.Users.ToListAsync();
+			return users.ToDictionary( user => user.Id, user => user.UserName );
+		}
 	}
 }

@@ -1,37 +1,61 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 using SmallCommitsWorkshop;
+using SmallCommitsWorkshop.Models;
 using SmallCommitsWorkshopTests.Extensions;
 
 namespace SmallCommitsWorkshopTests.Controllers {
 	[TestFixture]
 	internal sealed class UsersControllerTests {
 		private WebApplicationFactory<Startup> m_factory;
+		private HttpClient m_client;
+		private IServiceScope m_scope;
+		private UsersContext m_usersContext;
 
 		[SetUp]
 		public void SetUp() {
 			m_factory = new WebApplicationFactory<Startup>();
+			m_client = m_factory.CreateClient();
+			m_scope = m_factory.Server?.Host.Services.CreateScope();
+			m_usersContext = m_scope.ServiceProvider.GetService<UsersContext>();
+		}
+
+		[TearDown]
+		public void TearDown() {
+			m_scope.Dispose();
 		}
 
 		[Test]
 		public async Task GetAll_ReturnsUsers() {
-			HttpClient client = m_factory.CreateClient();
+			User[] users = new User[] {
+				new User() { Id = 42, UserName = "JaneSmith" },
+				new User() { Id = 156, UserName = "JoeSmith" },
+			};
 
-			using( HttpResponseMessage response = await client.GetAsync( "/api/users" ) ) {
+			await AddUsers( users );
+
+			using( HttpResponseMessage response = await m_client.GetAsync( "/api/users" ) ) {
 				CollectionAssert.AreEquivalent(
-					new Dictionary<long, string>() {
-						{ 169, "D2LSupport" },
-						{ 175, "user1" },
-					}, 
+					users.ToDictionary( user => user.Id, user => user.UserName ),
 					await response.Content.ReadAsJsonAsync<IDictionary<long, string>>()
 				);
 			}
+		}
+
+		private Task AddUsers( params User[] users ) {
+			foreach( User user in users ) {
+				m_usersContext.Users.Add( user );
+			}
+			return m_usersContext.SaveChangesAsync();
 		}
 	}
 }

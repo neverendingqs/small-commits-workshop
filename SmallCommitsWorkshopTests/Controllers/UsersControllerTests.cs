@@ -48,8 +48,14 @@ namespace SmallCommitsWorkshopTests.Controllers {
 
 			using( HttpResponseMessage response = await m_client.GetAsync( "/api/users" ) ) {
 				CollectionAssert.AreEquivalent(
-					users.ToDictionary( user => user.Id, user => user.UserName ),
-					await response.Content.ReadAsJsonAsync<IDictionary<long, string>>()
+					users.ToDictionary(
+						user => user.Id,
+						user => new Dictionary<string, object>( 2 ) {
+							{ "id", user.Id },
+							{ "userName", user.UserName },
+						}
+					),
+					await response.Content.ReadAsJsonAsync<IDictionary<long, IDictionary<string, object>>>()
 				);
 			}
 		}

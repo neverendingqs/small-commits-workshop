@@ -41,7 +41,10 @@ namespace SmallCommitsWorkshopTests.Controllers {
 				new User() { Id = 156, UserName = "JoeSmith" },
 			};
 
-			await AddUsers( users );
+			foreach( User user in users ) {
+				m_usersContext.Users.Add( user );
+			}
+			await m_usersContext.SaveChangesAsync();
 
 			using( HttpResponseMessage response = await m_client.GetAsync( "/api/users" ) ) {
 				CollectionAssert.AreEquivalent(
@@ -49,13 +52,6 @@ namespace SmallCommitsWorkshopTests.Controllers {
 					await response.Content.ReadAsJsonAsync<IDictionary<long, string>>()
 				);
 			}
-		}
-
-		private Task AddUsers( params User[] users ) {
-			foreach( User user in users ) {
-				m_usersContext.Users.Add( user );
-			}
-			return m_usersContext.SaveChangesAsync();
 		}
 	}
 }

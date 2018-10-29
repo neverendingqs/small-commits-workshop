@@ -99,16 +99,19 @@ namespace SmallCommitsWorkshopTests.Controllers {
 			User user = m_defaultUsers.First();
 			Assert.AreNotEqual( newUserName, user.UserName );
 
-			user.UserName = newUserName;
-			user.IsActive = !user.IsActive;
+			User newUserDetails = new User() { Id = user.Id, UserName = newUserName, IsActive = !user.IsActive };
+			newUserDetails.UserName = newUserName;
+			newUserDetails.IsActive = !user.IsActive;
 
-			using( HttpResponseMessage response = await m_client.PostAsJsonAsync( "/api/users/", user ) ) {
+			using( HttpResponseMessage response = await m_client.PostAsJsonAsync( "/api/users/", newUserDetails ) ) {
 				Assert.AreEqual( HttpStatusCode.NoContent, response.StatusCode );
 			}
 
+			await m_usersContext.Entry( user ).ReloadAsync();
 			User actualUser = await m_usersContext.Users.FindAsync( user.Id );
+
 			Assert.NotNull( actualUser, "Could not find created user!" );
-			Assert.AreEqual( newUserName, actualUser.UserName );
+			Assert.AreEqual( newUserDetails.UserName, actualUser.UserName );
 			Assert.AreEqual( user.IsActive, actualUser.IsActive );
 		}
 

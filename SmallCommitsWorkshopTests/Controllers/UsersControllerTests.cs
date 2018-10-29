@@ -100,9 +100,6 @@ namespace SmallCommitsWorkshopTests.Controllers {
 			Assert.AreNotEqual( newUserName, user.UserName );
 
 			User newUserDetails = new User() { Id = user.Id, UserName = newUserName, IsActive = !user.IsActive };
-			newUserDetails.UserName = newUserName;
-			newUserDetails.IsActive = !user.IsActive;
-
 			using( HttpResponseMessage response = await m_client.PostAsJsonAsync( "/api/users/", newUserDetails ) ) {
 				Assert.AreEqual( HttpStatusCode.NoContent, response.StatusCode );
 			}

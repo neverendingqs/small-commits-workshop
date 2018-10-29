@@ -130,6 +130,25 @@ namespace SmallCommitsWorkshopTests.Controllers {
 			);
 		}
 
+		[Test]
+		public async Task Delete_UserDoesNotExists_DeletesUser() {
+			User userToDelete = new User() { Id = 47362, UserName = "DoesNotExistUser", IsActive = true };
+			CollectionAssert.DoesNotContain(
+				m_defaultUsers.Select( u => u.Id ),
+				userToDelete.Id
+			);
+
+			using( HttpResponseMessage response = await m_client.DeleteAsync( $"/api/users/{userToDelete.Id}" ) ) {
+				Assert.AreEqual( HttpStatusCode.NoContent, response.StatusCode );
+			}
+
+			await m_usersContext.Entry( userToDelete ).ReloadAsync();
+			Assert.IsNull(
+				await m_usersContext.Users.FindAsync( userToDelete.Id ),
+				"User should have been deleted but was not!"
+			);
+		}
+
 		private Task AddUsers( params User[] users ) {
 			foreach( User user in users ) {
 				m_usersContext.Users.Add( user );

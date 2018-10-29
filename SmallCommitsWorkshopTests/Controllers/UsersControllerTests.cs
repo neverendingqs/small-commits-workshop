@@ -147,9 +147,7 @@ namespace SmallCommitsWorkshopTests.Controllers {
 		}
 
 		private Task AddUsers( params User[] users ) {
-			foreach( User user in users ) {
-				m_usersContext.Users.Add( user );
-			}
+			m_usersContext.Users.AddRange( users );
 			return m_usersContext.SaveChangesAsync();
 		}
 	}

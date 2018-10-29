@@ -142,7 +142,7 @@ namespace SmallCommitsWorkshopTests.Controllers {
 			await m_usersContext.Entry( userToDelete ).ReloadAsync();
 			Assert.IsNull(
 				await m_usersContext.Users.FindAsync( userToDelete.Id ),
-				"User should have been deleted but was not!"
+				"User should not exist but does!"
 			);
 		}
 

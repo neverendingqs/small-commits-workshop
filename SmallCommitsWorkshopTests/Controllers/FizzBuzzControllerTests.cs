@@ -16,12 +16,13 @@ namespace SmallCommitsWorkshopTests.Controllers {
 				.Setup( x => x.Calculate( number ) )
 				.Returns( calculatedValue );
 
-			FizzBuzzController sut = new FizzBuzzController( fizzBuzzService: fizzBuzzService.Object );
+			using( FizzBuzzController sut = new FizzBuzzController( fizzBuzzService: fizzBuzzService.Object ) ) {
 
-			Assert.AreEqual(
-				expected: calculatedValue,
-				actual: sut.Get( number: number )
-			);
+				Assert.AreEqual(
+					expected: calculatedValue,
+					actual: sut.Get( number: number )
+				);
+			}
 		}
 	}
 }

@@ -28,6 +28,8 @@ namespace SmallCommitsWorkshopTests.Controllers {
 		[TearDown]
 		public void TearDown() {
 			m_scope.Dispose();
+			m_client.Dispose();
+			m_factory.Dispose();
 		}
 
 		[Test]

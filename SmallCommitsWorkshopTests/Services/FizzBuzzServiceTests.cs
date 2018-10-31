@@ -46,5 +46,29 @@ namespace SmallCommitsWorkshopTests.Services {
 				actual: m_fizzBuzzService.Calculate( number: number )
 			);
 		}
+
+		[TestCase( 1, "some-fizz", "some-buzz", ExpectedResult = "1" )]
+		[TestCase( 3, "some-fizz", "some-buzz", ExpectedResult = "some-fizz" )]
+		[TestCase( 3, "", "some-buzz", ExpectedResult = "" )]
+		[TestCase( 3, null, "some-buzz", ExpectedResult = "" )]
+		[TestCase( 5, "some-fizz", "some-buzz", ExpectedResult = "some-buzz" )]
+		[TestCase( 5, "some-fizz", "", ExpectedResult = "" )]
+		[TestCase( 5, "some-fizz", null, ExpectedResult = "" )]
+		[TestCase( 15, "some-fizz", "some-buzz", ExpectedResult = "some-fizzsome-buzz" )]
+		[TestCase( 15, "", "some-buzz", ExpectedResult = "some-buzz" )]
+		[TestCase( 15, null, "some-buzz", ExpectedResult = "some-buzz" )]
+		[TestCase( 15, "some-fizz", "", ExpectedResult = "some-fizz" )]
+		[TestCase( 15, "some-fizz", null, ExpectedResult = "some-fizz" )]
+		[TestCase( 15, "", "", ExpectedResult = "" )]
+		[TestCase( 15, "", null, ExpectedResult = "" )]
+		[TestCase( 15, null, "", ExpectedResult = "" )]
+		[TestCase( 15, null, null, ExpectedResult = "" )]
+		public string Calculate__int__string__string( int number, string fizz, string buzz ) {
+			return m_fizzBuzzService.Calculate(
+				number: number,
+				fizz: fizz,
+				buzz: buzz
+			);
+		}
 	}
 }

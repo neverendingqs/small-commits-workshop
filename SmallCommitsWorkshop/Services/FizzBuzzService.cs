@@ -3,19 +3,31 @@
 namespace SmallCommitsWorkshop.Services {
 	public class FizzBuzzService : IFizzBuzzService {
 		string IFizzBuzzService.Calculate( int number ) {
-			StringBuilder response = new StringBuilder();
+			IFizzBuzzService @this = this;
+			return @this.Calculate( number, "Fizz", "Buzz" );
+		}
+
+		string IFizzBuzzService.Calculate(
+			int number,
+			string fizz,
+			string buzz
+		) {
+			fizz = fizz ?? "";
+			buzz = buzz ?? "";
+
+			if( number % 15 == 0 ) {
+				return $"{fizz}{buzz}";
+			}
 
 			if( number % 3 == 0 ) {
-				response.Append( "Fizz" );
+				return fizz;
 			}
 
 			if( number % 5 == 0 ) {
-				response.Append( "Buzz" );
+				return buzz;
 			}
 
-			return response.Length == 0
-				? number.ToString()
-				: response.ToString();
+			return number.ToString();
 		}
 	}
 }

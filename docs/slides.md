@@ -17,7 +17,7 @@ Carl Pacey and Mark Tse
 
 * Goals
 * Exercise 1: Breaking up a pull request (~45 minutes)
-* Exercise 2: Implementing a feature using small commits (~45 minutes)
+* Exercise 2: Plan implementing a feature using small commits (~45 minutes)
 
 ---
 
@@ -29,7 +29,54 @@ Carl Pacey and Mark Tse
 
 ---
 
-# Exercise 2: Implementing a feature using small commits
+# Exercise 2: Let's add a new feature
+
+* You're hopefully familiar with Users after Exercise #1.
+* You may have noticed that the app already supports `/fizzbuzz/{number}`.
+* Now we're going to expand the `/fizzbuzz` functionality to include user information.
+
+---
+
+# Exercise 2: Wait, WTF is FizzBuzz?
+
+[content goes here]
+
+---
+
+# Exercise 2: Best route ever
+
+We want to add the following route:
+
+`/fizzbuzz/{number}/users/{userId}`
+
+This route will return a modified FizzBuzz:
+
+1. Instead of "Fizz", this route will use the user's UserName.
+1. Instead of "Buzz", this route will use a new user property, BuzzWord.
+
+---
+
+# Exercise 2: Specification by Example
+
+```http
+GET /users/1045
+```
+
+```json
+{
+  "id": 1045,
+  "userName": "cpacey",
+  "isActive": true,
+  "buzzWord": "isawesome"
+}
+```
+
+| `GET` |      Result      |
+|:----------|:-------------|
+| `/fizzbuzz/2/users/1045` | `2` |
+| `/fizzbuzz/6/users/1045` | `cpacey` |
+| `/fizzbuzz/10/users/1045` | `isawesome` |
+| `/fizzbuzz/15/users/1045` | `cpaceyisawesome` |
 
 ---
 

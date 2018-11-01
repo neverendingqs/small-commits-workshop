@@ -1,5 +1,8 @@
 # Small Commits Workshop
 
+Slides:
+[https://neverendingqs.github.io/small-commits-workshop](https://neverendingqs.github.io/small-commits-workshop/#1)
+
 ## Getting Started
 
 * Clone this repo

@@ -16,12 +16,27 @@ Carl Pacey and Mark Tse
 # Agenda
 
 * Goals
+* Quick refresher on techniques
 * Exercise 1: Breaking up a pull request (~45 minutes)
+* Break (~10 minutes)
 * Exercise 2: Plan implementing a feature using small commits (~45 minutes)
 
 ---
 
 # Goals
+
+---
+
+# Techniques
+
+* Add a new class, method, property, etc
+  * Test it, but don't use it
+* Add new tests to existing code
+* Refactor existing code
+  * Specifically to make your next change easier, safer, or smaller
+  * Try to limit or isolate test changes
+  * Try to avoid (or isolate) functional changes
+* Functional changes are smaller after you make the above non-functional changes first
 
 ---
 

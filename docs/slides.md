@@ -37,6 +37,12 @@ Carl Pacey and Mark Tse
 
 ---
 
+# Exercise 2: Wait, WTF is FizzBuzz?
+
+[content goes here]
+
+---
+
 # Exercise 2: Best route ever
 
 We want to add the following route:
@@ -67,10 +73,10 @@ GET /users/1045
 
 | `GET` |      Result      |
 |:----------|:-------------|
-| `/fizzbuzz/14/users/1045` |  `29` |
-| `/fizzbuzz/30/users/1045` | `cpacey` |
-| `/fizzbuzz/50/users/1045` | `isawesome` |
-| `/fizzbuzz/75/users/1045` | `cpaceyisawesome` |
+| `/fizzbuzz/2/users/1045` | `2` |
+| `/fizzbuzz/6/users/1045` | `cpacey` |
+| `/fizzbuzz/10/users/1045` | `isawesome` |
+| `/fizzbuzz/15/users/1045` | `cpaceyisawesome` |
 
 ---
 

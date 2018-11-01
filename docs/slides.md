@@ -55,6 +55,8 @@ Carl Pacey and Mark Tse
   * Fork the repository
     (https://github.com/neverendingqs/small-commits-workshop)
   * Using `users/bigpr`, break up the code into smaller commits
+      * You can view the changes at
+        https://github.com/neverendingqs/small-commits-workshop/pull/13
   * For each commit, create a pull request onto `<user>/master`
     * Either add Carl, Mark, or another person in the workshop as your reviewer
   * Continue until your `<user>/master` branch is functionally similar to

@@ -50,16 +50,20 @@ Carl Pacey and Mark Tse
   * Adds DELETE user
   * Adds an index on User.Id
   * Adds a new property User.IsActive
-  * Refactors tests
-* Tasks:
-  * Fork the repository
-    (https://github.com/neverendingqs/small-commits-workshop)
-  * Using `users/bigpr`, break up the code into smaller commits
-      * You can view the changes at
-        https://github.com/neverendingqs/small-commits-workshop/pull/13
-  * For each commit, create a pull request onto `<user>/master`
+  * Refactors test (`AddUsers()` method)
+
+---
+
+# Exercise 1: Breaking up a pull request
+
+Tasks:
+1. Fork the repository (https://github.com/neverendingqs/small-commits-workshop)
+1. Using `users/bigpr`, break up the code into smaller commits
+    * You can view the changes at
+      https://github.com/neverendingqs/small-commits-workshop/pull/13
+1. For each commit, create a pull request onto `<user>/master`
     * Either add Carl, Mark, or another person in the workshop as your reviewer
-  * Continue until your `<user>/master` branch is functionally similar to
+1. Continue until your `<user>/master` branch is functionally similar to
     `users/bigpr`
 
 ---

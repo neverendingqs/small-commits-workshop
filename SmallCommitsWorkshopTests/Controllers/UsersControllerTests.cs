@@ -46,7 +46,7 @@ namespace SmallCommitsWorkshopTests.Controllers {
 							{ "id", user.Id },
 							{ "userName", user.UserName },
 							{ "isActive", user.IsActive },
-							{ "buzzWord", user.BuzzWord}
+							{ "buzzWord", user.BuzzWord }
 						}
 					),
 					await response.Content.ReadAsJsonAsync<IDictionary<long, IDictionary<string, object>>>()

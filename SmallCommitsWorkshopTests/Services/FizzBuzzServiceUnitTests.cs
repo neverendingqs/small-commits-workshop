@@ -3,7 +3,7 @@ using SmallCommitsWorkshop.Services;
 
 namespace SmallCommitsWorkshopTests.Services {
 	[TestFixture]
-	internal sealed class FizzBuzzServiceTests {
+	internal sealed class FizzBuzzServiceUnitTests {
 		private readonly IFizzBuzzService m_fizzBuzzService = new FizzBuzzService();
 
 		[TestCase( 1 )]

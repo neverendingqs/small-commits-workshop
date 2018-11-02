@@ -49,31 +49,27 @@ Get some practice breaking up PRs:
 
 ---
 
-# Exercise 1: Breaking up a pull request
+# Exercise 1: Walkthrough
 
-* The app currently supports a "get all users" route
-  * `small-commits-workshop/SmallCommitsWorkshop/Controllers/UsersController.cs`
-* The `users/bigpr` branch does the following:
-  * Adds GET single user
-  * Adds POST user, which creates or updates
-  * Adds DELETE user
-  * Adds an index on User.Id
-  * Adds a new property User.IsActive
-  * Refactors test (`AddUsers()` method)
+* Branch: `users/bigpr`
+* Pull request: https://github.com/neverendingqs/small-commits-workshop/pull/13
 
 ---
 
 # Exercise 1: Breaking up a pull request
 
 Tasks:
-1. Fork the repository (https://github.com/neverendingqs/small-commits-workshop)
-1. Using `users/bigpr`, break up the code into smaller commits
-    * You can view the changes at
-      https://github.com/neverendingqs/small-commits-workshop/pull/13
-1. For each commit, create a pull request onto `<user>/master`
-    * Either add Carl, Mark, or another person in the workshop as your reviewer
-1. Continue until your `<user>/master` branch is functionally similar to
-    `users/bigpr`
+1. Break up the commit into smaller commits
+   * Branch: `users/bigpr`
+   * Pull request:
+     https://github.com/neverendingqs/small-commits-workshop/pull/13
+1. For each commit
+    * Create a pull request onto `<user>:master` (the `master` branch in your
+      fork)
+    * Paste a link of your pull request into the Slack channel
+      #smallcommits-workshop
+    * Look for a pull request to review (if any are available)
+1. Continue until `<user>:master` is functionally similar to `users/bigpr`
 
 ---
 

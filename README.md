@@ -25,21 +25,16 @@ Slides:
 Note: the app uses a self-signed certificate, and you may see warnings about it.
 It is safe in this specific instance to ignore the errors.
 
-### Visual Studio Alternative
+### OS / Visual Studio Alternatives
 
-If you do not have or want to use Visual Studio, make sure you have [.Net Core
-2.1
-SDK](https://www.microsoft.com/net/download/thank-you/dotnet-sdk-2.1.403-windows-x64-installer)
-installed.
-
-You can test the app by running:
+If you do not have or want to use Visual Studio, or do not want to use Windows,
+simply install [.Net Core 2.1 SDK](https://www.microsoft.com/net/download) and
+use your editor of choice.
 
 ```cmd
+# Run tests
 dotnet test SmallCommitsWorkshopTests\SmallCommitsWorkshopTests.csproj
-```
 
-You can run the app by running:
-
-```cmd
+# Run app
 dotnet run --project SmallCommitsWorkshop\SmallCommitsWorkshop.csproj
 ```

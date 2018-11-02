@@ -25,18 +25,27 @@ Carl Pacey and Mark Tse
 
 # Goals
 
+Get some practice breaking up PRs:
+
+1. _After_ the code is written
+1. _Before_ the code is written
+
 ---
 
 # Techniques
 
-* Add a new class, method, property, etc
+1. Add a new class, method, property, etc
   * Test it, but don't use it
-* Add new tests to existing code
-* Refactor existing code
-  * Specifically to make your next change easier, safer, or smaller
-  * Try to limit or isolate test changes
+1. Add new tests to existing code
+  * Try to avoid (or isolate) changes to production code
+1. Refactor existing production code
+  * Specifically to make your next change(s) easier, safer, or smaller
+  * Try to limit or isolate changes to test code
   * Try to avoid (or isolate) functional changes
-* Functional changes are smaller after you make the above non-functional changes first
+1. Functional changes
+  * These get small after you've done the above
+  * Test changes are only to add new tests
+  * And new tests end up being for new production code only
 
 ---
 
@@ -71,22 +80,45 @@ Tasks:
 # Exercise 2: Let's add a new feature
 
 * You're hopefully familiar with Users after Exercise #1.
-* You may have noticed that the app already supports `/fizzbuzz/{number}`.
-* Now we're going to expand the `/fizzbuzz` functionality to include user information.
+* Now we're going to expand some functionality to include user information.
 
 ---
 
-# Exercise 2: Wait, WTF is FizzBuzz?
+# Exercise 2: FizzBuzz
 
-[content goes here]
+FizzBuzz is a famous interview question:
+
+> Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+
+https://blog.codinghorror.com/why-cant-programmers-program/
 
 ---
 
-# Exercise 2: Best route ever
+# Exercise 2: Existing Functionality
+
+You may have noticed that the app already supports `/fizzbuzz/{number}`.
+
+```
+GET /fizzbuzz/14: 14
+GET /fizzbuzz/15: FizzBuzz
+GET /fizzbuzz/16: 16
+GET /fizzbuzz/17: 17
+GET /fizzbuzz/18: Fizz
+GET /fizzbuzz/19: 19
+GET /fizzbuzz/20: Buzz
+GET /fizzbuzz/21: Fizz
+GET /fizzbuzz/22: 22
+```
+
+---
+
+# Exercise 2: New Functionality
 
 We want to add the following route:
 
-`/fizzbuzz/{number}/users/{userId}`
+```
+/fizzbuzz/{number}/users/{userId}
+```
 
 This route will return a modified FizzBuzz:
 
@@ -95,13 +127,10 @@ This route will return a modified FizzBuzz:
 
 ---
 
-# Exercise 2: Specification by Example
-
-```http
-GET /users/1045
-```
+# Exercise 2: Examples
 
 ```json
+GET /users/1045
 {
   "id": 1045,
   "userName": "cpacey",
@@ -110,12 +139,17 @@ GET /users/1045
 }
 ```
 
-| `GET` |      Result      |
-|:----------|:-------------|
-| `/fizzbuzz/2/users/1045` | `2` |
-| `/fizzbuzz/6/users/1045` | `cpacey` |
-| `/fizzbuzz/10/users/1045` | `isawesome` |
-| `/fizzbuzz/15/users/1045` | `cpaceyisawesome` |
+```json
+GET /fizzbuzz/14/users/1045: 14
+GET /fizzbuzz/15/users/1045: cpaceyisawesome
+GET /fizzbuzz/16/users/1045: 16
+GET /fizzbuzz/17/users/1045: 17
+GET /fizzbuzz/18/users/1045: cpacey
+GET /fizzbuzz/19/users/1045: 19
+GET /fizzbuzz/20/users/1045: isawesome
+GET /fizzbuzz/21/users/1045: cpacey
+GET /fizzbuzz/22/users/1045: 22
+```
 
 ---
 

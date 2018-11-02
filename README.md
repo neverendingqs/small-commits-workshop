@@ -1,5 +1,7 @@
 # Small Commits Workshop
 
+[![Build status](https://ci.appveyor.com/api/projects/status/wvkbw0nvrgnr5h23/branch/master?svg=true)](https://ci.appveyor.com/project/neverendingqs/small-commits-workshop/branch/master)
+
 Slides:
 [https://neverendingqs.github.io/small-commits-workshop](https://neverendingqs.github.io/small-commits-workshop/#1)
 

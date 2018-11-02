@@ -43,7 +43,7 @@ Get some practice breaking up PRs:
   * Try to limit or isolate changes to test code
   * Try to avoid (or isolate) functional changes
 1. Functional changes
-  * Thesae get small after you've done the above
+  * These get small after you've done the above
   * New tests end up being for new production code
 
 ---

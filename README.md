@@ -8,15 +8,16 @@ Slides:
 ## Getting Started
 
 * Clone this repo
-* Set up .NET Core for Visual Studio 2017 via the [.NET Core
+* Set up .NET Core 2.1 for Visual Studio 2017 via the [.NET Core
   Guide](https://docs.microsoft.com/en-us/dotnet/core/windows-prerequisites?tabs=netcore21#prerequisites-with-visual-studio-2017)
 * Open `SmallCommitsWorkshop.sln` using Visual Studio 2017
 * Run the tests in the `SmallCommitsWorkshopTests` project
   * Required: ReSharper or [NUnit 3 Test
     Adapter](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter)
 * Start the app by clicking on the green arrow with label `IIS Express`
-* While the app is running, navigate to `/api/users`. You should see the
-  following response:
+* This should launch the app in your browser and automatically navigate to the `/api/users` route.
+  * If this doesn't work, contact Mark or Carl and they'll help you out.
+* While on `/api/users/`, you should see the following response:
 
 ```json
 {"169":{"id":169,"userName":"D2LSupport","isActive":true},"175":{"id":175,"userName":"user1","isActive":false}}

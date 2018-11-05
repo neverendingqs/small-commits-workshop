@@ -193,6 +193,27 @@ Code up your plan, in order.
 
 How did that work out for you?
 
+---
+
+# Appendix: How can I split this up?
+
+Questions to ask yourself (in no particular order):
+
+* Can I improve test coverage by itself?
+* Can I refactor the existing code to make things easier?
+* Can I add a new class, method, or property by itself?
+* Can I make a small, possibly ugly change by itself, and the refactor later?
+
+---
+
+# Appendix: How do I know if I'm on the right track?
+
+You're on the right track if:
+
+* The PR has a single responsibility.
+* The PR is easy to review.
+* The PR can be shipped to production.
+* The PR is low risk.
 
 ---
 

@@ -30,6 +30,8 @@ Get some practice breaking up PRs:
 1. _After_ the code is written
 1. _Before_ the code is written
 
+*Note: if you haven't already, please pair up for this workshop*
+
 ---
 
 # Some Techniques

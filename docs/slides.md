@@ -170,6 +170,7 @@ To simplify things, here's the design we're going to go with:
 
 # Exercise 2: What we're going to do
 
+1. Start from `exercise1/bigpr` branch
 1. Plan how you'll build the PRs (5-10 mins)
 1. Code it up (Remaining Time)
 
@@ -201,7 +202,12 @@ Some questions you could ask yourself:
 
 # Exercise 2: Code it up
 
-Code up each step of your plan, in order.
+1. Create `<user>/exercise2` as a copy of the `exercise1/bigpr` branch
+  * (Or we can do it for you)
+1. Make one PR for each of step of your plan
+  * Target your `<user>/exercise2` branch
+1. Have your partner review your PRs
+1. Repeat steps 2 & 3 until feature is implemented
 
 ---
 

@@ -32,20 +32,16 @@ Get some practice breaking up PRs:
 
 ---
 
-# Techniques
+# Some Techniques
 
-1. Add a new class, method, property, etc
+* Add new tests to existing code
+  * This is safer if you don't change production code
+* Refactor existing production code
+  * This is afer if you don't change test code or functionality
+* Add a new class, method, or property
   * Test it, but don't use it
-1. Add new tests to existing code
-  * Try to avoid (or isolate) changes to production code
-1. Refactor existing production code
-  * Specifically to make your next change(s) easier, safer, or smaller
-  * Try to limit or isolate changes to test code
-  * Try to avoid (or isolate) functional changes
-1. Functional changes
-  * These get small after you've done the above
-  * Test changes are only to add new tests
-  * And new tests end up being for new production code only
+* Functional changes
+  * This is safer if the only test changes are for the new/altered functionality
 
 ---
 

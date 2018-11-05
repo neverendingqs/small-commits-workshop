@@ -66,10 +66,13 @@ Tasks:
 1. For each commit
     * Create a pull request onto `<user>:master` (the `master` branch in your
       fork)
-    * Paste a link of your pull request into the Slack channel
-      #smallcommits-workshop
-    * Look for a pull request to review (if any are available)
+    * Have your partner review the pull request (either in-person or via GitHub)
+    * Merge the pull request
 1. Continue until `<user>:master` is functionally similar to `exercise1/bigpr`
+
+*Note: you first need to [add your partner to your
+fork](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)
+before you can add them as pull request reviewers*
 
 ---
 

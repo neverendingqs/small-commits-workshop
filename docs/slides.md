@@ -193,6 +193,10 @@ Code up your plan, in order.
 
 How did that work out for you?
 
+1. What went well?
+1. What didn't go well?
+1. What do you wish you did differently?
+
 ---
 
 # Appendix: How can I split this up?

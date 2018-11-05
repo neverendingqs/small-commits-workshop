@@ -51,8 +51,8 @@ Get some practice breaking up PRs:
 
 # Exercise 1: Walkthrough
 
-* Branch: `users/bigpr`
-* Pull request: https://github.com/neverendingqs/small-commits-workshop/pull/13
+* Branch: `exercise1/bigpr`
+* Pull request: https://github.com/neverendingqs/small-commits-workshop/pull/27
 
 ---
 
@@ -60,16 +60,16 @@ Get some practice breaking up PRs:
 
 Tasks:
 1. Break up the commit into smaller commits
-   * Branch: `users/bigpr`
+   * Branch: `exercise1/bigpr`
    * Pull request:
-     https://github.com/neverendingqs/small-commits-workshop/pull/13
+     https://github.com/neverendingqs/small-commits-workshop/pull/27
 1. For each commit
     * Create a pull request onto `<user>:master` (the `master` branch in your
       fork)
     * Paste a link of your pull request into the Slack channel
       #smallcommits-workshop
     * Look for a pull request to review (if any are available)
-1. Continue until `<user>:master` is functionally similar to `users/bigpr`
+1. Continue until `<user>:master` is functionally similar to `exercise1/bigpr`
 
 ---
 

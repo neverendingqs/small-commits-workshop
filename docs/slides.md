@@ -179,7 +179,7 @@ For exercise 1, this could be:
 
 | Example #1 | Example #2 |
 |:-|:-|
-| 1. Add User.IsActive<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ update tests for 1 route)<br>2. Add index on User.Id<br>3. Add "Get single user" route<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests)<br>4. Add Create/update route<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests) | 1. Add index on User.Id<br>2. Add GET and POST routes<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests) with tests<br>3. Add User.IsActive<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ update tests for 3 routes)<br><br><br> |
+| 1. Add User.IsActive<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ update tests for 1 route)<br>2. Add index on User.Id<br>3. Add GET route<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests)<br>4. Add POST route<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests) | 1. Add index on User.Id<br>2. Add GET and POST routes<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests) with tests<br>3. Add User.IsActive<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ update tests for 3 routes)<br><br><br> |
 
 ---
 

@@ -60,11 +60,10 @@ Tasks:
    * Pull request:
      https://github.com/neverendingqs/small-commits-workshop/pull/27
 1. For each commit
-    * Create a pull request onto `<user>:master` (the `master` branch in your
-      fork)
+    * Create a pull request onto `<user>/master` in the original repository
     * Have your partner review the pull request (either in-person or via GitHub)
     * Merge the pull request
-1. Continue until `<user>:master` is functionally similar to `exercise1/bigpr`
+1. Continue until `<user>/master` is functionally similar to `exercise1/bigpr`
 
 *Note: you first need to [add your partner to your
 fork](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)

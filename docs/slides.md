@@ -11,15 +11,12 @@ Carl Pacey and Mark Tse
 
 # Introduction
 
----
-
-# Agenda
-
+Agenda:
 * Goals
 * Quick refresher on techniques
 * Exercise 1: Breaking up a pull request (~45 minutes)
 * Break (~10 minutes)
-* Exercise 2: Plan implementing a feature using small commits (~45 minutes)
+* Exercise 2: Plan and implement a feature using small PRs (~45 minutes)
 
 ---
 
@@ -34,16 +31,21 @@ Get some practice breaking up PRs:
 
 ---
 
-# Some Techniques
+# Carl's Favourite Techniques
 
-* Add new tests to existing code
-  * This is safer if you don't change production code
-* Refactor existing production code
-  * This is afer if you don't change test code or functionality
-* Add a new class, method, or property
-  * Test it, but don't use it
-* Functional changes
-  * This is safer if the only test changes are for the new/altered functionality
+I like to separate the following out into their own PRs:
+
+* Adding new tests to existing code
+  * Ask: Can I improve test coverage without other changes?
+* Refactoring existing production code
+  * Ask: Can I refactor the existing code to make the next change easier?
+* Adding a new class, method, or property without using it
+  * Ask: Can I add some new code by itself?
+* Changing functionality
+  * Ask: What's the smallest change I can make to add/alter the functionality?
+  * Ask: Could I add new code first to make this change smaller?
+  * Ask: Could I refactor first to make this change smaller?
+  * Ask: Could I make an ugly-but-small change now, and refactor afterwards?
 
 ---
 
@@ -73,10 +75,13 @@ before you can add them as pull request reviewers*
 
 ---
 
-# Exercise 2: Let's add a new feature
+class: center, middle
 
-* You're hopefully familiar with Users after Exercise #1.
-* Now we're going to expand some functionality to include user information.
+# Exercise 2
+
+Hopefully you're familiar with Users after Exercise #1.
+
+Let's build on that.
 
 ---
 
@@ -184,9 +189,19 @@ For exercise 1, this could be:
 
 ---
 
+# Exercise 2: Planning
+
+Some questions you could ask yourself:
+
+  * Ask: What's the smallest change I can make to make the new route work?
+  * Ask: Can I refactor the existing code to make things easier?
+  * Ask: Can I add some new code by itself?
+
+---
+
 # Exercise 2: Code it up
 
-Code up your plan, in order.
+Code up each step of your plan, in order.
 
 ---
 
@@ -206,14 +221,11 @@ class: center, middle
 
 ---
 
-# Appendix: How can I split this up?
+class: center, middle
 
-Questions to ask yourself (in no particular order):
+# All Done
 
-* Can I improve test coverage by itself?
-* Can I refactor the existing code to make things easier?
-* Can I add a new class, method, or property by itself?
-* Can I make a small, possibly ugly change by itself, and the refactor later?
+Thanks for coming.
 
 ---
 
@@ -221,11 +233,7 @@ Questions to ask yourself (in no particular order):
 
 You're on the right track if:
 
-* The PR has a single responsibility.
-* The PR is easy to review.
-* The PR can be shipped to production.
-* The PR is low risk.
-
----
-
-# Closing
+* The PR has a single responsibility
+* The PR is easy to review
+* The PR can be shipped to production
+* The PR is low risk

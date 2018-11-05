@@ -122,7 +122,7 @@ This route will return a modified FizzBuzz:
 
 ---
 
-# Exercise 2: Examples
+# Exercise 2: Example
 
 ```json
 GET /users/1045
@@ -145,6 +145,54 @@ GET /fizzbuzz/20/users/1045: isawesome
 GET /fizzbuzz/21/users/1045: cpacey
 GET /fizzbuzz/22/users/1045: 22
 ```
+
+---
+
+# Exercise 2: Any questions so far?
+
+---
+
+# Exercise 2: The design
+
+To simplify things, here's the design we're going to go with:
+
+1. `FizzBuzzController` will get a new route handler method which...
+1. looks up the user, and...
+1. calls `IFizzBuzzService` with the appropriate information
+
+---
+
+# Exercise 2: What we're going to do
+
+1. Plan how you'll build the PRs (5-10 mins)
+1. Code it up (Remaining Time)
+
+---
+
+name: tablify
+
+# Exercise 2: Planning
+
+Write down your plan for implementing this in 2-5 separate PRs.
+
+For exercise 1, this could be:
+
+| Example #1 | Example #2 |
+|:-|:-|
+| 1. Add User.IsActive<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ update tests for 1 route)<br>2. Add index on User.Id<br>3. Add "Get single user" route<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests)<br>4. Add Create/update route<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests) | 1. Add index on User.Id<br>2. Add GET and POST routes<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ new tests) with tests<br>3. Add User.IsActive<br>&nbsp;&nbsp;&nbsp;&nbsp;(+ update tests for 3 routes)<br><br><br> |
+
+---
+
+# Exercise 2: Code it up
+
+Code up your plan, in order.
+
+---
+
+# Exercise 2: Aftermath
+
+How did that work out for you?
+
 
 ---
 

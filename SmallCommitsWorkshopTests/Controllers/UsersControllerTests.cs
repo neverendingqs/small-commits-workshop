@@ -17,12 +17,20 @@ namespace SmallCommitsWorkshopTests.Controllers {
 		private IServiceScope m_scope;
 		private UsersContext m_usersContext;
 
+		private User[] m_defaultUsers = new User[] {
+			new User() { Id = 42L, UserName = "JaneSmith" },
+			new User() { Id = 156L, UserName = "JoeSmith" },
+		};
+
 		[SetUp]
-		public void SetUp() {
+		public async Task SetUp() {
 			m_factory = new WebApplicationFactory<Startup>();
 			m_client = m_factory.CreateClient();
 			m_scope = m_factory.Server?.Host.Services.CreateScope();
 			m_usersContext = m_scope.ServiceProvider.GetService<UsersContext>();
+
+			m_usersContext.Users.AddRange( m_defaultUsers );
+			await m_usersContext.SaveChangesAsync();
 		}
 
 		[TearDown]
@@ -38,11 +46,6 @@ namespace SmallCommitsWorkshopTests.Controllers {
 				new User() { Id = 42, UserName = "JaneSmith" },
 				new User() { Id = 156, UserName = "JoeSmith" },
 			};
-
-			foreach( User user in users ) {
-				m_usersContext.Users.Add( user );
-			}
-			await m_usersContext.SaveChangesAsync();
 
 			using( HttpResponseMessage response = await m_client.GetAsync( "/api/users" ) ) {
 				CollectionAssert.AreEquivalent(

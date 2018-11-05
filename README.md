@@ -12,7 +12,11 @@ Slides:
   this repo
 * Configure Git to push to your fork by running:
   ```bash
+  # Over SSH
   git remote set-url origin --push git@github.com:<username>/small-commits-workshop.git
+
+  # Over HTTPS
+  git remote set-url origin --push https://github.com/<username>/small-commits-workshop.git
   ```
 * Set up .NET Core 2.1 for Visual Studio 2017 via the [.NET Core
   Guide](https://docs.microsoft.com/en-us/dotnet/core/windows-prerequisites?tabs=netcore21#prerequisites-with-visual-studio-2017)

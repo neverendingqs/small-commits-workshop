@@ -16,6 +16,10 @@ namespace SmallCommitsWorkshopTests.Controllers {
 		private HttpClient m_client;
 		private IServiceScope m_scope;
 		private UsersContext m_usersContext;
+		private User[] m_defaultUsers = new User[] {
+			new User() { Id = 42L, UserName = "JaneSmith" },
+			new User() { Id = 156L, UserName = "JoeSmith" },
+		};
 
 		[SetUp]
 		public void SetUp() {
@@ -46,7 +50,7 @@ namespace SmallCommitsWorkshopTests.Controllers {
 
 			using( HttpResponseMessage response = await m_client.GetAsync( "/api/users" ) ) {
 				CollectionAssert.AreEquivalent(
-					users.ToDictionary(
+					m_defaultUsers.ToDictionary(
 						user => user.Id,
 						user => new Dictionary<string, object>( 2 ) {
 							{ "id", user.Id },
